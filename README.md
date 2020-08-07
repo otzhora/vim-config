@@ -1,0 +1,10 @@
+# This is repo for my vim config
+
+### setup 
+
+* clone Vundle
+'''
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+'''
+
+* get .vimrc
