@@ -13,6 +13,11 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 ```
+
+### install YouCompleteMe
+
+follow instructions from [docs](https://github.com/VundleVim/Vundle.vim)
+
 ### get .vimrc
 ```
 wget https://raw.githubusercontent.com/otzhora/vim-config/master/vimrc -O ~/.vimrc
