@@ -1,5 +1,27 @@
+set nocompatible
+filetype off
+
 execute pathogen#infect()
+set rtp+=~/.vim/bundle/Vundle.vim
 highlight BadWhitespace ctermbg=red guibg=red
+call vundle#begin()
+
+" install Vundle bundles
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'nvie/vim-flake8'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-syntastic/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-fugitive'
+call vundle#end()
+
+filetype plugin indent on
+
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -34,36 +56,13 @@ set clipboard=unnamed
 " enable syntax highlighting
 syntax enable
 set background=light
-colorscheme wombat
-" configure Vundle
-filetype on " without this vim emits a zero exit status, later, because of :ft off
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" install Vundle bundles
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-  source ~/.vimrc.bundles.local
-  Plugin 'flazz/vim-colorschemes'
-  Plugin 'tmhedberg/SimpylFold'
-  Plugin 'vim-scripts/indentpython.vim'
-  Plugin 'ycm-core/YouCompleteMe'
-  Plugin 'nvie/vim-flake8'
-  Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-endif
-
-
-call vundle#end()
-
-" ensure ftdetect et al work by including this after the Vundle stuff
-filetype plugin indent on
+colorscheme molokai
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
 set backupcopy=yes                                           " see :help crontab
-set clipboard=unnamed                                        " yank and paste with the system clipboard
+set clipboard=unnamedplus                                        " yank and paste with the system clipboard
 set directory-=.                                             " don't store swapfiles in the current directory
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
@@ -165,3 +164,5 @@ if filereadable(expand("~/.vimrc.local"))
   " noremap! jj <ESC>
   source ~/.vimrc.local
 endif
+
+
